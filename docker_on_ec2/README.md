@@ -10,7 +10,7 @@ Go to: https://aws.amazon.com/console/
 Go to the EC2 dashboard and click on "Launch Instance" button. We can use these configurations for our instance:
 **1. AMI:** Amazon Linux
 **2. Instance type:** t3.micro
-**3. Storage:** 6GB SSD Volume type
+**3. Storage:** 8GB SSD Volume type
 
 ### Special configuración for firewall
 We have to set up the security group for our instance:
@@ -38,20 +38,52 @@ In the EC2 terminal we have to install docker.
 sudo yum update -y
 ```
 
-**2. Install Docker package:** 
+## **2. Install Docker package:** 
 ```
-sudo amazon-linux-extras install docker -y
+sudo yum install docker -y  # para Amazon Linux
+# sudo apt install docker.io -y  # para Ubuntu
 ```
 
-**3. Start the Docker service in our system:**
+## **3. Start the Docker service in our system:**
 ```
+sudo systemctl start docker
 sudo usermod -a -G docker ec2-user
 ```
 Notice that `ec2-user` is the user that we use to log in into the instance.
 
-**4. Restart the SSH connection:** Exit and log in into the instance again.
+## **4. Restart the SSH connection:** 
+Exit and log in into the instance again.
 
 ```
 exit
 ssh -i "your-key-file.pem" ec2-user@your-ec2-public-dns
 ```
+
+## **5. Pull Docker image:** 
+We have to pull a docker image with a nginx engine configure. You can check the Docker file and the idnex.html in this repository. And also de docker image you'll check in Docker Hub: https://hub.docker.com/repository/docker/jeanpierec/nginx-basic-html/general
+
+In your EC2 instance yun:
+```
+sudo docker pull jeanpierec/nginx-basic-html:latest
+```
+## **6. Check docker status:** 
+Check if our container is running.
+
+```
+docker ps
+```
+
+## **7. Expose Docker service:** 
+We use port 80 for this example.
+
+```
+sudo docker run -d -p 80:80 jeanpierec/nginx-basic-html:tagname
+```
+
+## **8. Copy public instance address:** 
+Now we could check our web page. Please check that URL using HTTP protocol.
+
+
+### Do you wanna edit the index.html file?
+
+Well, you could create a new Docker image using the Dockerfile and the index.html in this repository.
