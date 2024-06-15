@@ -73,7 +73,7 @@ Check if our container is running.
 docker ps
 ```
 
-[![Checkstatus](https://github.com/ljpiere/aws_basic_training/blob/main/docker_on_ec2/screenshots/docker_running.jpg)]
+![Checkstatus](https://github.com/ljpiere/aws_basic_training/blob/main/docker_on_ec2/screenshots/docker_running.jpg)
 ## **7. Expose Docker service:** 
 We use port 80 for this example.
 
