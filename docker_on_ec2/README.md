@@ -84,6 +84,11 @@ sudo docker run -d -p 80:80 jeanpierec/nginx-basic-html:tagname
 ## **8. Copy public instance address:** 
 Now we could check our web page. Please check that URL using HTTP protocol.
 
+![Instancedetails](https://github.com/ljpiere/aws_basic_training/blob/main/docker_on_ec2/screenshots/instance_details.jpg)
+
+And check our web page!
+
+![webreunning](https://github.com/ljpiere/aws_basic_training/blob/main/docker_on_ec2/screenshots/web_page_running.jpg)
 
 ### Do you wanna edit the index.html file?
 
