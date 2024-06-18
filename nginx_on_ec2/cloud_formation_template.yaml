@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Template to create an EC2 instance running Docker with a specific image from Docker Hub
+
+Resources:
+  EC2Instance:
+    Type: "AWS::EC2::Instance"
+    Properties: 
+      InstanceType: "t2.micro"
+      ImageId: "ami-0c55b159cbfafe1f0" # Amazon Linux 2 AMI
+      KeyName: "your-key-pair-name" # Key name
+      SecurityGroupIds: 
+        - !Ref InstanceSecurityGroup
+      UserData: 
+        Fn::Base64: 
+          !Sub |
+            #!/bin/bash
+            yum update -y
+            amazon-linux-extras install docker -y
+            service docker start
+            usermod -a -G docker ec2-user
+            docker run -d -p 80:80 jeanpierec/nginx-basic-html:latest
+      Tags: 
+        - Key: Name
+          Value: "DockerEC2Instance"
+# Check docker hub link
+  InstanceSecurityGroup:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: "Enable SSH and HTTP access"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+Outputs:
+  InstanceId:
+    Description: "Instance ID of the newly created EC2 instance"
+    Value: !Ref EC2Instance
+  PublicIP:
+    Description: "Public IP address of the newly created EC2 instance"
+    Value: !GetAtt EC2Instance.PublicIp
