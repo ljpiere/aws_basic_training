@@ -17,14 +17,14 @@ sudo service postgresql start # O para Ubuntu
 
 # Configurar acceso
 sudo nano /var/lib/pgsql/data/pg_hba.conf  # Amazon Linux
-sudo nano /etc/postgresql/12/main/pg_hba.conf # O para Ubuntu
+sudo nano /etc/postgresql/16/main/pg_hba.conf # O para Ubuntu
 
     # Agregar esto al final del archivo
 host    all             all             0.0.0.0/0               md5
 
 # Configurar motor
 sudo nano /var/lib/pgsql/data/postgresql.conf  # Amazon Linux
-sudo nano /etc/postgresql/12/main/postgresql.conf # O para Ubuntu
+sudo nano /etc/postgresql/16/main/postgresql.conf # O para Ubuntu
     # Buscamos esta linea y modificamos
 listen_addresses = '*'
 
@@ -56,7 +56,7 @@ Source: Your IP (or 0.0.0.0/0 for any IP, aunque no es recomendable por razones 
 
 # Configuramos archivo del motor
 sudo nano /var/lib/pgsql/data/pg_hba.conf  # Amazon Linux
-sudo nano /etc/postgresql/12/main/pg_hba.conf # O para Ubuntu
+sudo nano /etc/postgresql/16/main/pg_hba.conf # O para Ubuntu
 
 #agregamos
 host    all             all             0.0.0.0/0               md5
