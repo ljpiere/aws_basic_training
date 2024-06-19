@@ -1,0 +1,9 @@
+1. Crear instancia t2.micro en EC2
+2. Configura el grupo de seguridad para permitir tráfico entrante en el puerto 5432 (PostgreSQL) y el puerto 22 (SSH).
+3. Conectarte a la instancia desde Powershell
+4. Instalar PostgreSQL
+5. Inicializar base de datos
+6. Configurar acceso al motor
+7. Configurar postgresql
+8. Crear usuario postgresql
+9. Configuramos grupo de seguridad
