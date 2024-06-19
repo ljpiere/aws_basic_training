@@ -1,0 +1,3 @@
+1. Crear Lambda nueva
+2. Seleccionar "Utilizar un proyecto"
+3. Seleccionar Introducción a Lambda HTTP
