@@ -78,7 +78,7 @@ docker ps
 We use port 80 for this example.
 
 ```
-sudo docker run -d -p 80:80 jeanpierec/nginx-basic-html:tagname
+sudo docker run -d -p 80:80 jeanpierec/nginx-basic-html:latest
 ```
 
 ## **8. Copy public instance address:** 
