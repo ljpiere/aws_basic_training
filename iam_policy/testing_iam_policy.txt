@@ -1,0 +1,14 @@
+We can simulate the behaviour of a IAM Policy using this link:
+
+https://policysim.aws.amazon.com/
+
+Steps
+
+1. We have to create a User/Group with a policy.
+2. Go to the simulator.
+3. Select the user/group to test.
+4. Select any service to check if the user/group have/has access to that item.
+
+OK, so, what will we do next?
+
+5. Try editing or creating another policy, attached it to the group/user and use the simulator again with another service.
