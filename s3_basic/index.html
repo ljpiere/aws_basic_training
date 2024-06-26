@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Web Random</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a mi Página Web Random</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Inicio</a>
+        <a href="#about">Acerca de</a>
+        <a href="#services">Servicios</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <section id="home">
+            <div class="card">
+                <h2>Inicio</h2>
+                <p>Esta es la página de inicio. Aquí puedes poner una breve descripción de lo que trata tu sitio web.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="card">
+                <h2>Acerca de</h2>
+                <p>En esta sección puedes escribir sobre ti o sobre tu empresa. Proporciona información que pueda interesar a tus visitantes.</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="card">
+                <h2>Servicios</h2>
+                <p>Aquí puedes describir los servicios que ofreces. Explica claramente lo que ofreces a tus clientes.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="card">
+                <h2>Contacto</h2>
+                <p>Proporciona información de contacto para que los visitantes puedan comunicarse contigo. Puedes incluir un formulario de contacto aquí.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mi Página Web Random. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
