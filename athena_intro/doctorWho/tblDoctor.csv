@@ -1,0 +1,13 @@
+"DoctorId","DoctorNumber","DoctorName","BirthDate","FirstEpisodeDate","LastEpisodeDate"
+1,9,Christopher Eccleston,1964-02-16,2005-03-26,2005-06-18
+2,6,Colin Baker,1943-06-08,1984-03-16,1986-12-06
+3,10,David Tennant,1971-04-18,2005-06-18,2010-01-01
+4,3,Jon Pertwee,2019-07-07,1970-01-03,1974-06-08
+5,11,Matt Smith,1982-10-28,2010-01-01,2013-12-25
+6,2,Patrick Troughton,1920-03-25,1966-10-29,1969-06-21
+7,8,Paul McGann,1959-11-14,1996-05-27,1996-05-27
+8,12,Peter Capaldi,1958-04-14,2013-12-25,
+9,5,Peter Davison,1951-04-13,1981-03-21,1984-03-16
+10,7,Sylvester McCoy,1943-08-20,1987-09-07,1989-12-06
+11,4,Tom Baker,1934-01-20,1974-06-08,1981-03-21
+12,1,William Hartnell,2008-01-08,1963-11-23,1966-10-29
