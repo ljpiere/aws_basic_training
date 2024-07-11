@@ -1,0 +1,8 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  VersionedBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: my-versioned-bucket # Cambia "my-versioned-bucket" por el nombre que desees para tu bucket
+      VersioningConfiguration:
+        Status: Enabled

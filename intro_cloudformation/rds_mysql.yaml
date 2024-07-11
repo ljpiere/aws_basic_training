@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyDBInstance:
+    Type: 'AWS::RDS::DBInstance'
+    Properties:
+      DBInstanceIdentifier: mydbinstance
+      AllocatedStorage: '20' # 20 GB maximo para capa gratuita
+      DBInstanceClass: db.t2.micro # capa gratuita
+      Engine: MySQL
+      MasterUsername: mydbuser # CHECK
+      MasterUserPassword: mydbpassword # CHECK
+      DBName: mydatabase # CHECK
+      VPCSecurityGroups:
+        - !Ref MyDBSecurityGroup
+
+  MyDBSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Allow MySQL access
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '3306'
+          ToPort: '3306'
+          CidrIp: 0.0.0.0/0 # CHECK: Permite acceso MySQL desde cualquier lugar
+
+# please review all CHECK items
