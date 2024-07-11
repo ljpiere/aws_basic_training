@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyEC2KeyPair:
+    Type: 'AWS::EC2::KeyPair'
+    Properties:
+      KeyName: !Sub '${AWS::StackName}-keypair' # Cambia esto si deseas un nombre específico
+
+  MyEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties: 
+      InstanceType: t2.micro # Tipo de instancia gratuito
+      KeyName: !Ref MyEC2KeyPair
+      ImageId: ami-0a313d6098716f372 # Ubuntu Server 20.04 LTS (us-west-2)
+      SecurityGroupIds: 
+        - !Ref InstanceSecurityGroup
+
+  InstanceSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0 # Permite acceso SSH desde cualquier lugar
