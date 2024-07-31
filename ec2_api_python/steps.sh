@@ -5,21 +5,19 @@
 ssh -i /path/to/your-key.pem ec2-user@your-ec2-public-dns
 
 # Install requiere package
-sudo yum update -y  # for amazon linus AMI
 sudo apt update && sudo apt upgrade -y  # for Ubuntu AMI
 
-sudo yum install python3 -y  # Para Amazon Linux
 sudo apt install python3-pip -y  # Para Ubuntu
 
-sudo pip3 install flask # we'll use flask to create the api
+sudo apt install python3-flask -y # we'll use flask to create the api
 
 # load the python code into the instance
-scp -i /path/to/your-key.pem app.py ec2-user@your-ec2-public-dns:/home/ec2-user/
+scp -i "key.pem" api_python_code.py ubuntu@your-ec2-public-dns:/home/ubuntu/
 
 # run the python code
-python3 app.py
+python3 api_python_code.py
 
-# check the security grpu for HTTP connection in port 5000
+# check the security grpu for HTTP connection in port 5000 for custom TCP
 
 #------------------------------------
 # Test
