@@ -1,3 +1,8 @@
+----------------------------------------------------------------------------
+--
+-- Reemplazar el nombre del bucket
+--
+----------------------------------------------------------------------------
 -- Creamos nuestra base de datos
 CREATE DATABASE mi_base_datos;
 
@@ -11,7 +16,7 @@ WITH SERDEPROPERTIES (
     'serialization.format' = ',',
     'field.delim' = ','
 )
-LOCATION 's3://20240702pruebatahenaleyton/'
+LOCATION 's3://20241208leyton/author/'
 TBLPROPERTIES ('has_encrypted_data'='false',
     'skip.header.line.count'='1');
 
@@ -26,7 +31,7 @@ WITH SERDEPROPERTIES (
     'serialization.format' = ',',
     'field.delim' = ','
 )
-LOCATION 's3://20240702pruebatahenaleyton/'
+LOCATION 's3://20241208leyton/companion/'
 TBLPROPERTIES ('has_encrypted_data'='false',
     'skip.header.line.count'='1');
 
@@ -44,7 +49,7 @@ WITH SERDEPROPERTIES (
     'serialization.format' = ',',
     'field.delim' = ','
 )
-LOCATION 's3://20240702pruebatahenaleyton/'
+LOCATION 's3://20241208leyton/doctor/'
 TBLPROPERTIES ('has_encrypted_data'='false',
     'skip.header.line.count'='1');
 
@@ -62,7 +67,7 @@ WITH SERDEPROPERTIES (
     'serialization.format' = ',',
     'field.delim' = ','
 )
-LOCATION 's3://20240702pruebatahenaleyton/'
+LOCATION 's3://20241208leyton/episode/'
 TBLPROPERTIES ('has_encrypted_data'='false', 'skip.header.line.count'='1');
 
 
