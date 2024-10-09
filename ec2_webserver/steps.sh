@@ -29,3 +29,19 @@ sudo chown www-data:www-data /var/www/html/index.html
 sudo chmod 644 /var/www/html/index.html
 
 # Locate your public instance DNS into the EC2 menu
+
+
+#-----------------------------------------------------
+# Other way to do this
+#-----------------------------------------------------
+ssh -i "your-key.pem" ubuntu@your-public-dns
+sudo apt update
+sudo apt install git
+git --version
+git clone https://github.com/ljpiere/aws_basic_training.git
+sudo apt install nginx -y
+sudo systemctl start nginx
+sudo systemctl enable nginx
+sudo mv /home/ubuntu/aws_basic_training/ec2_webserver/index.html /var/www/html/
+sudo chown www-data:www-data /var/www/html/index.html
+sudo chmod 644 /var/www/html/index.html
