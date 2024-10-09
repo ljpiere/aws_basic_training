@@ -19,6 +19,25 @@ python3 api_python_code.py
 
 # check the security grpu for HTTP connection in port 5000 for custom TCP
 
+#------------------------------------------------------------------------------------------
+#  another way to do this
+#------------------------------------------------------------------------------------------
+# Connecto the instance
+# Connecto the instance
+ssh -i /path/to/your-key.pem ec2-user@your-ec2-public-dns
+
+# Install requiere package
+sudo apt update && sudo apt upgrade -y  # for Ubuntu AMI
+
+sudo apt install python3-pip -y  # Para Ubuntu
+
+sudo apt install python3-flask -y # we'll use flask to create the api
+
+sudo apt install git
+git --version
+git clone https://github.com/ljpiere/aws_basic_training.git
+cd aws_basic_training/ec2_api_python
+python3 api_python_code.py
 #------------------------------------
 # Test
 curl http://your-ec2-public-dns:5000/
